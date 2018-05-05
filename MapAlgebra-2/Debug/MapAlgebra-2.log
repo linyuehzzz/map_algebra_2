@@ -1,3 +1,12 @@
-﻿  MapAlgebra-2.cpp
+﻿  DistanceTransformer.cpp
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(103): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(108): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(133): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(195): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(200): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(202): warning C4305: “=”: 从“double”到“float”截断
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(209): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(210): warning C4018: “<”: 有符号/无符号不匹配
+d:\lydia\资环6班\大三下\地图代数\实习\3\mapalgebra-2\mapalgebra-2\distancetransformer.cpp(329): warning C4018: “<”: 有符号/无符号不匹配
   MapAlgebra-2.vcxproj -> D:\Lydia\资环6班\大三下\地图代数\实习\3\MapAlgebra-2\Debug\MapAlgebra-2.exe
   MapAlgebra-2.vcxproj -> D:\Lydia\资环6班\大三下\地图代数\实习\3\MapAlgebra-2\Debug\MapAlgebra-2.pdb (Full PDB)

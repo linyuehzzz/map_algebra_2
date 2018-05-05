@@ -240,7 +240,7 @@ int DistanceTransformer::TmpDistanceTransform32b(const char *SrcBmpName, CDistan
 			if (fabs(DisMtx[j][i]) < MinFloat) continue;
 			float MinDis = DisMtx[j][i];
 
-			for (int k = pTemplet->TmpSize() / 2; k > 0; k--)
+			for (int k = pTemplet->TmpSize() / 2 + 1; k < pTemplet->TmpSize(); k++)
 			{
 				int OffX = pTemplet->GetOffX(k);
 				int OffY = pTemplet->GetOffY(k);
