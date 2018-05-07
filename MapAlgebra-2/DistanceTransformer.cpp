@@ -187,7 +187,6 @@ int DistanceTransformer::TmpDistanceTransform32b(const char *SrcBmpName, CDistan
 	int Width = SrcFileInfo.biWidth;
 	int LineBytes = (SrcFileInfo.biWidth + 3) / 4 * 4;
 
-
 	// 3. 建立初始距离场、分配场
 	LocMtx = new unsigned char *[Height];
 	DisMtx = new float *[Height];
@@ -295,33 +294,13 @@ int DistanceTransformer::TmpDistanceTransform32b(const char *SrcBmpName, CDistan
 	fclose(bmpWrite);
 
 	// 5.2 写入分配场矩阵8bit unsigned char型
-	BITMAPFILEHEADER LocFileHead; // 8bit位图头结构
-	BITMAPINFOHEADER LocFileInfo;
-
-	LocFileHead.bfType = SrcFileHead.bfType;
-	LocFileHead.bfSize = 54 + SrcFileInfo.biWidth * 4 * SrcFileInfo.biHeight;//
-	LocFileHead.bfReserved1 = 0;
-	LocFileHead.bfReserved2 = 0;
-	LocFileHead.bfOffBits = 54;//
-
-	LocFileInfo.biSize = 40;
-	LocFileInfo.biWidth = SrcFileInfo.biWidth;//
-	LocFileInfo.biHeight = SrcFileInfo.biHeight;//
-	LocFileInfo.biPlanes = 1;
-	LocFileInfo.biBitCount = 8;//
-	LocFileInfo.biCompression = 0;
-	LocFileInfo.biSizeImage = 0;
-	LocFileInfo.biXPelsPerMeter = 0;
-	LocFileInfo.biYPelsPerMeter = 0;
-	LocFileInfo.biClrUsed = 0;
-	LocFileInfo.biClrImportant = 0;
-
-	FILE * locWrite = fopen(OutLocName, "wb");
-	fwrite(&LocFileHead, sizeof(BITMAPFILEHEADER), 1, locWrite);
-	fwrite(&LocFileInfo, sizeof(BITMAPINFOHEADER), 1, locWrite);
+	FILE *locWrite = fopen(OutLocName, "wb");
+	fwrite(&SrcFileHead, sizeof(BITMAPFILEHEADER), 1, locWrite);
+	fwrite(&SrcFileInfo, sizeof(BITMAPINFOHEADER), 1, locWrite);
+	fwrite(ColorIdx, 1024, 1, locWrite);
 	for (int y = 0; y < Height; y++)
 	{
-		fwrite(LocMtx[y], sizeof(float), Width, locWrite);
+		fwrite(LocMtx[y], sizeof(char), LineBytes, locWrite);
 	}
 	fclose(locWrite);
 
