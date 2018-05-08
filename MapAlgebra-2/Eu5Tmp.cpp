@@ -8,7 +8,7 @@ CEu5Tmp::CEu5Tmp()
 	{
 		float x = GetOffX(i);
 		float y = GetOffY(i);
-		a_Mtx[i] = sqrt(x * x + y * y);
+		a_Mtx[i] = floor(sqrt(x * x + y * y) + 0.5) ;
 	}
 }
 
